@@ -175,7 +175,7 @@ function putPoint(uuid, point) {
 //
 var endpoint;
 
-endpoint = new Firebase('https://scoots-da97f.firebaseio.com/' + mapId);
+endpoint = new Firebase('https://assassinsmap.firebaseio.com/maps/' + mapId);
 
 endpoint.on('child_added', function(childSnapshot) {
   var uuid = childSnapshot.key()

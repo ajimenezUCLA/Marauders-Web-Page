@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Maurader's Map</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.6/mapbox.css' rel='stylesheet' />
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <!-- Include styles.css-->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Include Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+</head>
+<body>
+  <div id="map"></div>
+
+  <div id="text">
+    <h2>Assassins</h2>
+    <h3>Current Player: </h3>
+    <h3 id="currentPlayer"></h3>
+    <br>
+    <table align=center class="table table-striped table-bordered">
+      <tr>
+        <th>Player</th>
+        <th>Target</th>
+      </tr>
+      <tr>
+        <td>Angel</td>
+        <td>Katrina</td>
+      </tr>
+      <tr>
+        <td>Arthur</td>
+        <td>Angel</td>
+      </tr>
+      <tr>
+        <td>Katrina</td>
+        <td>Arthur</td>
+      </tr>
+    </table>
+    <h4>Created by Katrina Duong, Angel Jimenez, & Arthur Fan</h4>
+    <h4>CS M117 Lab 1E</h4>
+  </div>
+  <script src="https://api.tiles.mapbox.com/mapbox.js/v2.1.6/mapbox.js"></script>
+  <script src="https://cdn.firebase.com/js/client/2.2.3/firebase.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.7.0/lodash.min.js"></script>
+  <script src="./config.js"></script>
+  <script src="./app.js"></script>
+  <script>
+    var username
+    username = prompt("Enter Codename");
+    document.getElementById('currentPlayer').innerHTML = username;
+    console.log("testing");
+  </script>
+  <!-- <script language="javascript" type="text/javascript" src="libraries/p5.js"></script> -->
+	<script language="javascript" type="text/javascript" >
+	//Retrieving data from firebase to display
+	function setup1() {
+		firebase.initializeApp(config);
+		database = firebase.database();
+		
+		var database = firebase.database();
+
+		var ref = database.ref('user');
+		ref.on('value', gotData, errData);
+	}
+	function gotData(data) {
+		//console.log(data.val());
+		var codename = data.val();
+		var keys = Object.keys(keys);
+	}
+
+	function errData(data) {
+		console.log('Error!');
+		console.log(err);
+}
+	
+	
+	
+	
+	</script>
+	
+  <!-- <script>
+		var userDataRef = firebase.database().ref("UserData").orderByKey();
+		userDataRef.once("value").then(function(snapshot) {
+		snapshot.forEach(function(childSnapshot) {
+		  var key = childSnapshot.key;
+		  var childData = childSnapshot.val();              
+
+		  var name_val = childSnapshot.val().Name;
+		  var id_val = childSnapshot.val().AssignedID;
+
+		  $("#name").append(name_val);
+		  $("#id").append(id_val);
+
+		  });
+		});
+  </script>		--> 
+  
+  <!--<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', config.analytics, 'auto');
+    ga('send', 'pageview');
+  </script>-->
+</body>
+</html>

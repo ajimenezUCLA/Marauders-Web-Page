@@ -1,0 +1,10 @@
+{
+  "rules": {
+    "maps": {
+      "$map": {
+        ".read": true,
+        ".write": true
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 70%;
+}
+#text{
+  position: absolute;
+  top: 30;
+  bottom: 30;
+  left: 70%;
+  width: 30%;
+}
+
+td {
+  text-align: left;
+  border-style: none;
+  text-transform: capitalize;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  /*background-color: rgba(51, 200, 255, .4);*/
+}
+
+table {
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: center;
+  width: 25%;
+}
+
+th, td {
+  font-family: 'Roboto', sans-serif;
+  border: 1px solid black;
+  text-align: center;
+}
+
+h4, h3 {
+  text-align: center;
+  text-transform: capitalize;
+}

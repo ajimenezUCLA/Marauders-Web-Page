@@ -5,7 +5,6 @@ Original and later versions are lost so the only version I had left was the one 
 + JavaScript
 + CSS
 + HTML
-+ PHP
 
 ## Technologies
 + Google Firebase
